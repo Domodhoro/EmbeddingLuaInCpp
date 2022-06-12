@@ -4,22 +4,24 @@
 
 #include "luaScript.hpp"
 
-int main() {
-    std::string scriptPath;
+int main() {    
+    using namespace std;
+
+    string scriptPath;
 
     try {
-        std::cout << "Digite o caminho do script lua: ";
-        std::cin >> scriptPath;
+        cout << "Digite o caminho do script lua: ";
+        cin >> scriptPath;
 
         auto luaScript = std::make_unique<LuaScript>(scriptPath.c_str());
 
-        std::cin.ignore();
-        std::cin.get();
+        cin.ignore();
+        cin.get();
         return 0;
     } catch(const std::exception& e) {
-        std::cerr << e.what();
-        std::cin.ignore();
-        std::cin.get();
+        cerr << e.what();
+        cin.ignore();
+        cin.get();
         return 1;
     }
 }
