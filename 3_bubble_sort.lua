@@ -13,7 +13,7 @@ function bubbleSort(items, size)
 end
 
 function main()
-    myItems = {
+    local myItems = {
         2.54, 5.85, 4.18, 0.54, 4.36, 6.36, 3.32, 7.65, 4.56, 9.56, 1.24
     }
 
