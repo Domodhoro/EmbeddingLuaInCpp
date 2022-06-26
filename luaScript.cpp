@@ -15,11 +15,14 @@ LuaScript::LuaScript(const char* scriptPath) : m_L(luaL_newstate()) {
         lua_close(m_L);
 
         throw std::runtime_error("Falha ao ler script Lua.");
-    }
+    } else {
+        lua_getglobal(m_L, "main");
+        lua_isfunction(m_L, -1);
 
-    lua_getglobal(m_L, "main");
-    lua_isfunction(m_L, -1);
-    lua_pcall(m_L, 0, 0, 0);
+        const int numArgs = 0, numReturns = 0;
+
+        lua_pcall(m_L, numArgs, numReturns, 0);
+    }
 }
 
 LuaScript::~LuaScript() {
