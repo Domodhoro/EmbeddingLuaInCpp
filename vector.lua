@@ -1,6 +1,6 @@
 Vector = {x = 0, y = 0, z = 0}
 
-function Vector:new(x, y, z)
+newVector = function(x, y, z)
     local newVector = {}
 
     newVector.x = x
@@ -10,8 +10,8 @@ function Vector:new(x, y, z)
     return newVector
 end
 
-function main()
-    myVector = Vector:new(1, 2, 3)
+main = function()
+    myVector = newVector(1, 2, 3)
 
     print("x = ", myVector.x)
     print("y = ", myVector.y)

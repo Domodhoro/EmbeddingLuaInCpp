@@ -1,4 +1,4 @@
-function printTable(node)
+printTable = function(node)
     for index, data in ipairs(node) do
         print(index)
 
@@ -10,7 +10,7 @@ function printTable(node)
     end
 end
 
-function main()
+main = function()
     local people = {
         {
             name = "James",

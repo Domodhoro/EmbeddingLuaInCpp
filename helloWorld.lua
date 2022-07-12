@@ -1,3 +1,3 @@
-function main()
+main = function()
     print("Hello, world!")
 end

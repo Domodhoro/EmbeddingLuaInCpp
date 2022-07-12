@@ -2,24 +2,33 @@
 #include <string>
 #include <memory>
 
+using std::cout;
+using std::cin;
+using std::cerr;
+using std::string;
+using std::exception;
+using std::make_unique;
+
 #include "luaScript.hpp"
 
 int main() {
-    std::string scriptPath;
+    string scriptPath;
 
     try {
-        std::cout << "Script lua: ";
-        std::cin >> scriptPath;
+        cout << "Script lua: ";
+        cin >> scriptPath;
 
-        auto luaScript = std::make_unique<LuaScript>(scriptPath.c_str());
+        auto luaScript = make_unique<LuaScript>(scriptPath.c_str());
 
-        std::cin.ignore();
-        std::cin.get();
+        cin.ignore();
+        cin.get();
+
         return 0;
-    } catch (const std::exception& e) {
-        std::cerr << e.what();
-        std::cin.ignore();
-        std::cin.get();
+    } catch (const exception& e) {
+        cerr << e.what();
+        cin.ignore();
+        cin.get();
+
         return 1;
     }
 }

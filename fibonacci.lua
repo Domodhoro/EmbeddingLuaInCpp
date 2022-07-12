@@ -1,4 +1,4 @@
-function main()
+main = function()
     local n = 1000
     local num = 0
 	local nextNum = 1

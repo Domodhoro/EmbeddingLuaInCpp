@@ -1,4 +1,4 @@
-function partition(myItems, left, right, pivot)
+partition = function(myItems, left, right, pivot)
 	local pivotValue = myItems[pivot]
 
 	myItems[pivot],
@@ -24,7 +24,7 @@ function partition(myItems, left, right, pivot)
     return aux
 end
 
-function quickSort(myItems, left, right)
+quickSort = function(myItems, left, right)
 	if right > left then
 	    local newPivot = partition(myItems, left, right, left)
 
@@ -33,7 +33,7 @@ function quickSort(myItems, left, right)
 	end
 end
 
-function main()
+main = function()
     local myItems = {
         2.54, 5.85, 4.18, 0.54, 4.36, 2.33,
         6.36, 3.32, 7.65, 4.56, 9.56, 1.24

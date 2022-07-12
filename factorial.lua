@@ -1,4 +1,4 @@
-function factorial(n)
+factorial = function(n)
     if n == 0 then
         return 1
     else
@@ -6,7 +6,7 @@ function factorial(n)
     end
 end
 
-function main()
+main = function()
     for i = 0, 10 do
         print(i, "! = ", factorial(i))
     end

@@ -1,5 +1,7 @@
 #include <stdexcept>
 
+using std::runtime_error;
+
 #include "luaScript.hpp"
 
 extern "C" {
@@ -14,7 +16,7 @@ LuaScript::LuaScript(const char* scriptPath) : m_L(luaL_newstate()) {
     if (luaL_dofile(m_L, scriptPath) != LUA_OK) {
         lua_close(m_L);
 
-        throw std::runtime_error("Falha ao ler script Lua.");
+        throw runtime_error("Falha ao ler script Lua.");
     } else {
         lua_getglobal(m_L, "main");
         lua_isfunction(m_L, -1);
