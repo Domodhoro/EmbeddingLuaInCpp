@@ -1,17 +1,17 @@
 cocktailSort = function(myItems, size)
-    local swapped
+    local swap
     repeat
-    swapped = false
+    swap = false
 
     for i = 1, size - 1 do
         if myItems[i] > myItems[i + 1] then
             myItems[i], myItems[i + 1] = myItems[i + 1], myItems[i]
 
-            swapped = true
+            swap = true
         end
     end
 
-    if swapped == false then
+    if swap == false then
         break
 	end
 
@@ -19,11 +19,11 @@ cocktailSort = function(myItems, size)
         if myItems[i] > myItems[i + 1] then
             myItems[i], myItems[i + 1] = myItems[i + 1] , myItems[i]
 
-            swapped = true
+            swap = true
         end
     end
 
-    until swapped == false
+    until swap == false
 end
 
 main = function()
